@@ -1,5 +1,5 @@
 service:
-  name: node-s3-zip-upload
+  name: typescript-hello-world
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
