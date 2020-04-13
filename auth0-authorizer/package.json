@@ -1,0 +1,12 @@
+{
+  "name": "auth0-authorizer",
+  "version": "1.0.0",
+  "description": "Protecting API gateway endpoints with auth0",
+  "license": "MIT",
+  "dependencies": {
+    "jsonwebtoken": "^8.1.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^6.1.4"
+  }
+}
