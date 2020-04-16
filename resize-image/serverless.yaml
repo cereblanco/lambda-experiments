@@ -1,0 +1,26 @@
+service: resize-image
+provider:
+  name: aws
+  runtime: nodejs10.x
+  environment:
+    ACCESS_ID_KEY: ${file(./secrets.json):ACCESS_ID_KEY}
+    SECRET_ACCESS_KEY: ${file(./secrets.json):SECRET_ACCESS_KEY}
+    BUCKET: ${file(./secrets.json):BUCKET}
+    AWS_ENDPOINT_URL: ${file(./secrets.json):AWS_ENDPOINT_URL}
+plugins:
+  - serverless-s3-local
+  - serverless-offline
+custom:
+  s3:
+    port: 8000
+    directory: ./.local-s3
+functions:
+  s3hook:
+    handler: handler.s3hook
+    events:
+      - s3:
+          bucket: ${file(./secrets.json):BUCKET}
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: incoming/
+            - suffix: .jpg
