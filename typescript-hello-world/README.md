@@ -1,5 +1,14 @@
 # Hello World in TypeScript
 
+# Development
+
+Using serverless-offline
+
+```bash
+sls offline
+```
+
+
 # Deployment
 
 ```bash
